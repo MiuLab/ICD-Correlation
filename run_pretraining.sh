@@ -1,0 +1,18 @@
+CUDA_VISIBLE_DEVICES="0" python3 run_icd_pretraining.py \
+    --train_data_file ../../caml-mimic/mimicdata/mimic3/train_50.labels \
+    --output_dir ../models/bert-icd-mimic3-50-pretrained \
+    --eval_data_file ../../caml-mimic/mimicdata/mimic3/test_50.labels \
+    --model_type icd-bert \
+    --model_name_or_path ../models/bert-icd-mimic3-50 \
+    --mlm --do_train --do_eval \
+    --evaluate_during_training \
+    --block_size 90 \
+    --per_gpu_train_batch_size 64 \
+    --per_gpu_eval_batch_size 64 \
+    --learning_rate 2e-5 \
+    --num_train_epochs 30 \
+    --warmup_steps 500 \
+    --save_steps 500 \
+    --save_total_limit 10 \
+    --eval_all_checkpoints \
+    --overwrite_cache
