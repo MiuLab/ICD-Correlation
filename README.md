@@ -2,7 +2,9 @@ ICDRescore
 ===
 
 ## Pre-training
-run `run_pretraining.sh`
+1. 
+2. prepare pretraining data by extracting the labels from `*_{full,50}.csv` and making the labels **space-separated**
+3. run `run_pretraining.sh`
 
 ## Rescoring
 1. modify the **MIMICDATA** path in `rescore.py`
